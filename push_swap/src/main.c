@@ -23,7 +23,10 @@ int	main(int ac, char **av)
 		return (1);
 	else if (ac == 2)
 		av = ft_split(av[1], ' ');
-	initial_stack_a(&a, av + 1);
+	if (ac == 2)
+		initial_stack_a(&a, av);
+	else
+		initial_stack_a(&a, av + 1);
 	if (!is_sorted(a))
 	{
 		if (stack_size(a) == 2)
